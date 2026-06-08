@@ -4,8 +4,6 @@ import Sayan from "./Sayan";
 
 const harry = new Mage("Harry", 100, 300); 
 
-harry.haraKiri();
-
 // const hermione = new Mage("Hermione", 95, 300); 
 
 // while( harry.alive && hermione.alive ){

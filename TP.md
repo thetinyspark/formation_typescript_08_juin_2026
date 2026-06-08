@@ -1,15 +1,12 @@
-TP n°7
+TP n°8
 
-Modifier la classe Sayan de la façon suivante: 
+Créer deux interfaces qui héritent chacune de IHeroe. 
 
-    - ne pas multiplier la strength ni les hp de base. 
-    - Il faut juste réécrire getAtkAmount et renvoyer 
-    un nombre 50 fois plus grand lorsque le personnage 
-    est transformé. 
+- Une interface nommée IMage décrivant la fonction suivante: 
+    - reloadMana():void
+
+- Une interface nommée ISayan décrivant la fonction suivante: 
+    - transform():void
 
 
-BONUS: 
-
-    - Si vous avez les temps, essayez de "détransformer", 
-    le personnage une fois qu'il a donné son premier coup 
-    en étant transformé. 
+Faites en sorte que vos classes implémentent les interfaces susnommées
