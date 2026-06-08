@@ -1,8 +1,27 @@
-TP n°5
+TP n°6
 
-- Transformer la classe Heroe de la manière suivante: 
+- Créer un nouveau type de Hero qui va hériter de la classe 
+Heroe. 
 
-- Transformer strength avec des setters/getters ( ensemble on appelle ça des accesseurs) de sorte à ce que la force soit comprise dans l'intervalle suivant [0,500]
+- Ce nouveau type de Heroe sera la classe Mage et il faudra 
+lui ajouter les propriétés et fonctionnalités suivantes: 
+
+ - mana:number
+ - stamina:number
+
+La méthode atk des objets de type Mage doit être réécrite 
+de la façon suivante: 
+
+    - S'il me reste du mana, alors j'en utilie une certaine 
+    quantité pour booster mon atk et faire de plus amples
+    dégâts. 
+
+    - S'il ne me reste plus de mana, alors j'utilise 
+    ma stamina pour amplifier mes dégâts
+
+    - S'il ne me reste ni l'un ni l'autre, alors mes dégâts 
+    sont réduits à 1.
 
 
-- Changer la méthode is alive, pour un getter du même nom
+Partons du principe qu'on utilise 1/5ème de notre mana/stamina
+à chaque coup porté. 
