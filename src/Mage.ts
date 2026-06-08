@@ -12,19 +12,17 @@ export default class Mage extends Heroe{
 
 
     // on peut réécrire (override) une méthode parente
-    public override atk( opponent:Heroe):void{
+    protected override getAtkAmount():number{
         if( this._mana >= 50 ){
-            console.log(this.name, ": wingardium boost moi çaaaaa !!");
-            opponent.hp -= this.strength * 2;
             this._mana -= 50;
+            return this.strength * 2;
         }
         else if( this._stamina >= 20 ){
-            super.atk(opponent);
             this._stamina -= 20;
+            return this.strength;
         }
         else{
-            console.log(this.name, " est fatigué(e)");
-            opponent.hp -= 1;
+            return 1;
         }
     }
 }

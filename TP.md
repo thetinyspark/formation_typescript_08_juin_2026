@@ -1,27 +1,15 @@
-TP n°6
+TP n°7
 
-- Créer un nouveau type de Hero qui va hériter de la classe 
-Heroe. 
+Modifier la classe Sayan de la façon suivante: 
 
-- Ce nouveau type de Heroe sera la classe Mage et il faudra 
-lui ajouter les propriétés et fonctionnalités suivantes: 
-
- - mana:number
- - stamina:number
-
-La méthode atk des objets de type Mage doit être réécrite 
-de la façon suivante: 
-
-    - S'il me reste du mana, alors j'en utilie une certaine 
-    quantité pour booster mon atk et faire de plus amples
-    dégâts. 
-
-    - S'il ne me reste plus de mana, alors j'utilise 
-    ma stamina pour amplifier mes dégâts
-
-    - S'il ne me reste ni l'un ni l'autre, alors mes dégâts 
-    sont réduits à 1.
+    - ne pas multiplier la strength ni les hp de base. 
+    - Il faut juste réécrire getAtkAmount et renvoyer 
+    un nombre 50 fois plus grand lorsque le personnage 
+    est transformé. 
 
 
-Partons du principe qu'on utilise 1/5ème de notre mana/stamina
-à chaque coup porté. 
+BONUS: 
+
+    - Si vous avez les temps, essayez de "détransformer", 
+    le personnage une fois qu'il a donné son premier coup 
+    en étant transformé. 

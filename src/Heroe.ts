@@ -60,14 +60,16 @@ export default class Heroe{
         return this._strength;
     }
 
-
-
     public atk(opponent:Heroe):void{
         // donne un coup à l'adversaire et réduit d'autant ses points de vie
-        opponent.hp -= this.strength;
+        opponent.hp -= this.getAtkAmount();
     }
 
     public get alive():boolean{
         return this.hp > 0;
+    }
+
+    protected getAtkAmount():number{
+        return this.strength;
     }
 }
