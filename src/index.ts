@@ -1,34 +1,35 @@
-function helloWorld():void{
-    console.log("Hello world");
-}
 
 
-const str:string = "Hello world";
-const isInFormation:boolean = true; 
-
-// toujours préciser le type de données 
-// quand le peut et ne pas recourir à l'inférence de type. 
-const participants:string[] = [
-    "Cyril", 
-    "Gabriel", 
-    "Matthieu", 
-    "Nicolas"
-]; 
-
-const obj:any = {
-    participant1: "Cyril",
-    participant2: "Gabriel",
-    participant3: "Matthieu",
-    participant4: "Nicolas", 
-    participant20: undefined // <- à ne jamais faire, c'est mal, chaque fois que vous faites ça, un chaton meurt
+// mon objet ici, va occuper une certaine adresse en mémoire
+// MAIS on est en javascript, donc cet objet est mouvant par nature
+// TANT QUE l'adresse en mémoire qui donne accès à l'objet ne 
+// change pas, c'est ok pour Javascript, même si le contenu 
+// de l'objet en lui-même change 
+const profil:any = {
+    name: "Nicolas", 
+    age: 40
 };
 
 
+profil.name = "Cyril";
+profil.age = 44;
 
-// quand on met un double égal, on compare les valeurs et Javascript
-// peut convertir le type le plus compliqué vers le type le plus simple
-// les valeurs ainsi converties sont comparées
+// console.log(profil);
 
-// le triple égal empêche la conversion implicite, ainsi, les valeurs 
-// ainsi que leurs types sont comparées.
-console.log(null === undefined);
+
+function displayMyAge(show:boolean){
+    
+    if( show === true ){
+        // le mot clé let se limite à une portée locale
+        var age:number = 40; // var permet une portée globale
+    }
+    
+    console.log(age);
+}
+
+displayMyAge(true);
+
+
+
+
+
