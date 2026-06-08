@@ -9,9 +9,16 @@ export default class Sayan extends Heroe{
     
     private _transformed:boolean = false;
 
+    protected override getAtkAmount(): number {
+        if( this._transformed ){
+            this._transformed = false;
+            return this.strength * 50; 
+        }
+
+        return this.strength;
+    }
+
     public transform():void{
-        this.strength *= 1; 
-        this.hp *= 0;
         this._transformed = true;
     }
 
