@@ -17,7 +17,7 @@ export default class Heroe{
         param_hp:number = 100
     ){
         this.name = param_name; 
-        this._strength = param_strength;
+        this.strength = param_strength;
         this.hp = param_hp; 
     }
 
@@ -45,14 +45,29 @@ export default class Heroe{
         return this._hp;
     }
 
+    public set strength(value:number){
+        // permet de renvoyer la valeur la plus petite entre
+        // 500 et value, ainsi la force ne dépasse jamais 500
+        value = Math.min(500,value);
+
+        // ici c'est l'opération inverse
+        value = Math.max(value,0);
+
+        this._strength = value;
+    }
+
+    public get strength():number{
+        return this._strength;
+    }
+
 
 
     public atk(opponent:Heroe):void{
         // donne un coup à l'adversaire et réduit d'autant ses points de vie
-        opponent._hp -= this._strength;
+        opponent.hp -= this.strength;
     }
 
-    public isAlive():boolean{
-        return this._hp > 0;
+    public get alive():boolean{
+        return this.hp > 0;
     }
 }
