@@ -1,8 +1,17 @@
-TP n°3
+TP n°4
 
-- Créer un module avec des fonctions utilitaires à l'intérieur. 
-- Importer ces fonctions utiliaires au sein d'index.ts
-- Puis logger le résultat de ces fonctions
+- Créer une classe de type Heroe contenant les propriétés
+et méthode suivantes: 
 
 
-NB: Essayez de varier la façon de déclarer les fonctions
+- Une propriété privée nommée strength:number
+- Une propriété publique nommée name:string
+- Une propriété publique nommée hp:number = 100
+- Une propriété publique nommée alive:boolean = false
+
+
+- Une fonction publique nommée atk( opponent:Personnage ), cette fonction permettra 
+d'attaquer un autre personnage. 
+
+- Si à la suite de la fonction atk, les hp de l'opposant 
+tombent à 0 ou moins, alors le personnage est mort. 
