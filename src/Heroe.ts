@@ -19,6 +19,9 @@ export default class Heroe{
         this.name = param_name; 
         this.strength = param_strength;
         this.hp = param_hp; 
+
+        // crée une copie d'une fonction associée à un contexte précis
+        // this.suicide = this.suicide.bind(this);
     }
 
     // les setters et les getters se comportent vu de l'extérieur
@@ -71,5 +74,39 @@ export default class Heroe{
 
     protected getAtkAmount():number{
         return this.strength;
+    }
+
+    // En javascript, les fonctions et les méthodes ne sont pas 
+    // forcément liées à leur contexte de déclaration. 
+
+    // Par exemple, une méthode ne s'éxécutera pas toujours avec 
+    // le pointeur "this" qui pointe vers l'objet en question. 
+
+    // Cela vient de la nature du Javascript, en effet, le contexte 
+    // d'éxécution d'une fonction, en Javascript, est lié au contexte
+    // qui l'appelle. 
+
+
+    // Ici, dans notre exemple, setTimeout est une fonction de l'objet window
+    // ( en gros de l'espace global ), et donc, c'est cet objet qui devient 
+    // le contexte d'éxécution de la fonction (et non pas un objet de type Heroe)
+
+    // les fonctions fléchées sont automatiquement liées à l'objet dans lequel 
+    // elles sont décrites
+    public haraKiri():void{
+        setTimeout( 
+            ()=>this.suicide(), 
+            // this.suicide,
+            1000
+        );
+    }
+
+    // si on déclare la fonction comme ceci, alors le contexte sera toujours 
+    // préservée (puisque c'est une fonction fléchée)
+    // private suicide = ():void=>{
+
+    private suicide():void{
+        console.log(this);
+        this.atk(this);
     }
 }
