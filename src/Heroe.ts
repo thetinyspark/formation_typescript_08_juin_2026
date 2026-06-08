@@ -32,8 +32,8 @@ export default class Heroe{
     // une fonction au lieu de lire une simple valeur en mémoire
     public set hp(value:number){
 
-        if( value > 1000)
-            value = 1000; 
+        if( value > 1000000)
+            value = 1000000; 
 
         if( value < 0)
             value = 0;
@@ -48,7 +48,7 @@ export default class Heroe{
     public set strength(value:number){
         // permet de renvoyer la valeur la plus petite entre
         // 500 et value, ainsi la force ne dépasse jamais 500
-        value = Math.min(500,value);
+        value = Math.min(10000,value);
 
         // ici c'est l'opération inverse
         value = Math.max(value,0);
