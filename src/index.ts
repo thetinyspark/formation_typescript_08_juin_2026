@@ -1,7 +1,10 @@
 import Heroe from "./Heroe";
 
-const goku = new Heroe("Goku", 100, 100); 
+const goku = new Heroe("Goku", 100, -1000); 
 const vegeta = new Heroe("Vegeta", 95, 110); 
+
+console.log(goku.hp);
+
 
 while( goku.isAlive() && vegeta.isAlive() ){
     // on va tirer un nombre au hasard entre 0 et 1

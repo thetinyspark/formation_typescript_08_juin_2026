@@ -1,17 +1,8 @@
-TP n°4
+TP n°5
 
-- Créer une classe de type Heroe contenant les propriétés
-et méthode suivantes: 
+- Transformer la classe Heroe de la manière suivante: 
 
-
-- Une propriété privée nommée strength:number
-- Une propriété publique nommée name:string
-- Une propriété publique nommée hp:number = 100
-- Une propriété publique nommée alive:boolean = false
+- Transformer strength avec des setters/getters ( ensemble on appelle ça des accesseurs) de sorte à ce que la force soit comprise dans l'intervalle suivant [0,500]
 
 
-- Une fonction publique nommée atk( opponent:Personnage ), cette fonction permettra 
-d'attaquer un autre personnage. 
-
-- Si à la suite de la fonction atk, les hp de l'opposant 
-tombent à 0 ou moins, alors le personnage est mort. 
+- Changer la méthode is alive, pour un getter du même nom

@@ -7,9 +7,9 @@ export default class Heroe{
 
     // les variables appartenant aux objets 
     // sont des propriétés
-    private strength:number = 0;
     public name:string = "noname"; 
-    public hp:number = 100;
+    private _strength:number = 0;
+    private _hp:number = 100;
 
     constructor( 
         param_name:string, 
@@ -17,16 +17,42 @@ export default class Heroe{
         param_hp:number = 100
     ){
         this.name = param_name; 
+        this._strength = param_strength;
         this.hp = param_hp; 
-        this.strength = param_strength;
     }
+
+    // les setters et les getters se comportent vu de l'extérieur
+    // comme des propriétés publiques, mais en fait ce sont des fonctions
+
+    // les setters et getters sont utiles uniquement lorsqu'on souhaite
+    // exercer un contrôle sur la valeur définie ou retournée. 
+
+    // en l'absence de contrôle, il n'est pas utile d'y avoir recours, 
+    // pire, ceci est contre productif, car cela demande d'éxécuter
+    // une fonction au lieu de lire une simple valeur en mémoire
+    public set hp(value:number){
+
+        if( value > 1000)
+            value = 1000; 
+
+        if( value < 0)
+            value = 0;
+
+        this._hp = value;
+    }
+
+    public get hp():number{
+        return this._hp;
+    }
+
+
 
     public atk(opponent:Heroe):void{
         // donne un coup à l'adversaire et réduit d'autant ses points de vie
-        opponent.hp -= this.strength;
+        opponent._hp -= this._strength;
     }
 
     public isAlive():boolean{
-        return this.hp > 0;
+        return this._hp > 0;
     }
 }
