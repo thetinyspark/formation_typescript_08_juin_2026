@@ -8,6 +8,9 @@ const pythagore = function(coteA:number, coteB:number ):number{
     return Math.sqrt( coteA * coteA + coteB * coteB );
 }; 
 
+// écriture raccourcie pour les fonctions fléchées si elles ne font qu'une ligne
+const multiply = ( a:number, b:number):number => a*b;
+
 
 // fonction fléchée, par nature anonyme, stockée dans une variable
 var degToRadian = (degree:number)=>{
@@ -19,5 +22,6 @@ var degToRadian = (degree:number)=>{
 export {
     calculerAireRectangle, 
     pythagore, 
-    degToRadian
+    degToRadian, 
+    multiply
 }
