@@ -1,6 +1,6 @@
 import AbstractHeroe from "./AbstractHeroe";
-import Inventory from "./Inventory";
-import Weapon from "./weapons/Weapon";
+import Inventory from "../Inventory";
+import Weapon from "../weapons/Weapon";
 
 
 export default class HeroeWithWeapon extends AbstractHeroe {

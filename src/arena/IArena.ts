@@ -1,4 +1,4 @@
-import IHeroe from "../IHeroe";
+import IHeroe from "../heroes/IHeroe";
 
 export interface IArena{
     addHeroe(heroe:IHeroe):void;

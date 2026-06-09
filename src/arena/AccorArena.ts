@@ -1,4 +1,4 @@
-import IHeroe from "../IHeroe";
+import IHeroe from "../heroes/IHeroe";
 import { IArena } from "./IArena";
 
 export default class AccorArena implements IArena{

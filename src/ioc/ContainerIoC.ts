@@ -2,7 +2,7 @@
 // des instances d'autres objets. 
 type BuilderInfo = { singleton:boolean, builder:Function, uniqInstance:any}; 
 
-export default class DynamicFactory{
+class ContainerIoC{
     private _builders:Map<string, BuilderInfo> = new Map<string, BuilderInfo>();
 
     public addBuilder(key:string, func:Function, singleton:boolean = false):void{
@@ -54,3 +54,8 @@ export default class DynamicFactory{
         return instance;
     }
 }
+
+// on gère le singleton en n'exportant pas la classe 
+// mais uniquement une instance de cette dernière
+const rootContainer = new ContainerIoC();
+export default rootContainer;
