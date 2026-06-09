@@ -1,47 +1,28 @@
-import Heroe from "./AbstractHeroe";
-import Inventory from "./Inventory";
-import Mage from "./Mage";
+import HeroeWithWeapon from "./HeroeWithWeapon";
+import MagicStaff from "./weapons/MagicStaff";
 import Sword from "./weapons/Sword";
-import Weapon from "./weapons/Weapon";
 
 
-const harry = new Mage("Harry", 100, 300); 
-const hermione = new Mage("Hermione", 95, 300); 
-
-const excalibur:Sword = {durability: 10, strength: 10, sharpness: 10};
-excalibur.durability = 5000;
-excalibur.strength = 5000;
-
-const couteau_a_beurre:Weapon = {durability: 1, strength: 1};
-excalibur.durability = 1;
-excalibur.strength = 1;
-
-const ratelier = new Inventory<Sword>();
-ratelier.addItem( excalibur );
+const harry = new HeroeWithWeapon("Harry", 100, 300); 
+const hermione = new HeroeWithWeapon("Hermione", 95, 300); 
 
 
-// impossible couteau_a_beurre n'est pas une sword
-// ratelier.addItem( couteau_a_beurre );
+const excalibur:Sword = {durability: 10, strength: 15, sharpness: 10};
+const baguette:MagicStaff = {durability: 10, strength: 20};
 
-console.log(ratelier.getItems());
+harry.addWeapon(excalibur); 
+hermione.addWeapon(baguette); 
 
-// while( harry.alive && hermione.alive ){
-//     // on va tirer un nombre au hasard entre 0 et 1
-//     // en JS (et donc en typescript) ça se fait avec 
-//     const toss = Math.random();
+harry.equipWeaponByIndex(0);
+hermione.equipWeaponByIndex(0);
 
-//     if( toss > 0.5 ){
-//         console.log("harry atk hermione");
-//         harry.atk(hermione);
-//     }
-//     else{
-//         console.log("hermione atk harry");
-//         hermione.atk(harry);
-//     }
-// }
 
-// if( harry.alive)
-//     console.log("harry est encore vivant");
+harry.atk(hermione); 
+console.log("-------------------");
+console.log(`Harry est vivant: ${harry.alive}, HP de harry ${harry.hp}`);
+console.log(`Hermione est vivante: ${hermione.alive}, HP de Hermione ${hermione.hp}`);
 
-// if( hermione.alive)
-//     console.log("hermione est encore vivant");
+hermione.atk(harry); 
+console.log("-------------------");
+console.log(`Harry est vivant: ${harry.alive}, HP de harry ${harry.hp}`);
+console.log(`Hermione est vivante: ${hermione.alive}, HP de Hermione ${hermione.hp}`);

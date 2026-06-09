@@ -9,6 +9,10 @@ export default class Inventory<T>{
         return this._items;
     }
 
+    public getItemAt(index:number):T|null{
+        return this._items[index] || null;
+    }
+
     public removeItem(item:T):void{
         if( this._items.includes(item)){
             // on vire l'item si il est présent dans le tableau des items
