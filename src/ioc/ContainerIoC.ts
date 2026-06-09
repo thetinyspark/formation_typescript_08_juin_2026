@@ -1,7 +1,6 @@
 // le concept du pattern factory est de créer
 // des instances d'autres objets. 
 type BuilderInfo = { singleton:boolean, builder:Function, uniqInstance:any}; 
-
 class ContainerIoC{
     private _builders:Map<string, BuilderInfo> = new Map<string, BuilderInfo>();
 
@@ -16,7 +15,7 @@ class ContainerIoC{
         );
     }
 
-    public resolve<T,U>(key:string, params:U):T|null{
+    public resolve<T,U>(key:string, params:U|any = {}):T|null{
 
         let instance:T|null = null;
 
