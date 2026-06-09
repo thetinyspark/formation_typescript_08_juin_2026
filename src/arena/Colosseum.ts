@@ -11,6 +11,8 @@ export default class Colosseum implements IArena{
     // de la classe. 
     private _heroes:IHeroe[] = []; 
 
+    public constructor(){}
+
     // gérer les héros ainsi que leur combat est une responsabilité
     public addHeroe(heroe:IHeroe):void{
 

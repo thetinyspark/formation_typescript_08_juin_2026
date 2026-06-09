@@ -16,7 +16,7 @@ export default class DynamicFactory{
         );
     }
 
-    public resolve<T>(key:string):T|null{
+    public resolve<T,U>(key:string, params:U):T|null{
 
         let instance:T|null = null;
 
@@ -39,14 +39,14 @@ export default class DynamicFactory{
 
                     // sinon on crée une nouvelle instance que l'on stocke
                     // sur builderinfo et que l'on retourne à la fin
-                    instance = builderInfo?.builder?.apply(null) as T;
+                    instance = builderInfo?.builder(params) as T;
                     builderInfo.uniqInstance = instance;
                 }
             }
             else{
                 // si le builderinfo ne doit pas gérer d'instance unique, 
                 // alors on retourne une nouvelle instance à chaque fois
-                instance = builderInfo?.builder?.apply(null) as T;
+                instance = builderInfo?.builder(params) as T;
             }
 
         }

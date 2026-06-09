@@ -15,7 +15,7 @@ export default abstract class AbstractHeroe implements IHeroe{
 
     constructor( 
         param_name:string, 
-        param_strength:number, 
+        param_strength:number = 0, 
         param_hp:number = 100
     ){
         this.name = param_name; 

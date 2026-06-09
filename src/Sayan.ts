@@ -10,6 +10,10 @@ export default class Sayan extends AbstractHeroe implements ISayan{
     
     private _transformed:boolean = false;
 
+    public constructor(...params:any[]){
+        super(...params);
+    }
+
     protected override getAtkAmount(): number {
         if( this._transformed ){
             this._transformed = false;

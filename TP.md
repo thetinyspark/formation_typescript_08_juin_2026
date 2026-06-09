@@ -1,12 +1,15 @@
-TP n°11
+TP n°12
 
-Enregistrer sur la dynamic factory, des méthodes, vous permettant 
-de retourner des weapons de différents types en fonction 
-d'une clé. 
+De la même façon que l'on a crée un SayanInitProperties, créez un ArenaInitProperties
+avec les éléments suivants: 
 
-Exemple: 
+{
+    heroes: IHeroe[] // tableau de héros fournis à l'arène dès son initialisation
+}
 
-    la clé SWORD déclenchera un builder qui retournera une sword
-    la clé STAFF déclenchera un builder qui retournera un Magic Staff
+Ce paramètre de type ArenaInitProperties, doit être utilisé dans la builder function 
+et pris en charge par AccorArena et Colosseum. 
 
-    etc etc .. 
+Vous pouvez ajouter une méthode getHeroes aux deux arènes afin de tester
+si oui ou non, après leur création, elles ont récupérés les héros contenus
+dans leur paramètre. 
