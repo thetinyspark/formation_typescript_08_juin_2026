@@ -1,12 +1,10 @@
-TP n°8
+TP n°9
 
-Créer deux interfaces qui héritent chacune de IHeroe. 
+Ajouter la fonctionnalité suivante à la classe HeroeWithWeapon. 
 
-- Une interface nommée IMage décrivant la fonction suivante: 
-    - reloadMana():void
+- Il vous faut la capacité de perdre une arme
+- Il vous faut la capacité d'équiper une arme 
+- Il vous faut la capacité de stocker une arme (donc le héros doit avoir un inventaire)
 
-- Une interface nommée ISayan décrivant la fonction suivante: 
-    - transform():void
-
-
-Faites en sorte que vos classes implémentent les interfaces susnommées
+- Lorsque le héros porte une arme, la force de l'arme s'ajoute à celle du héros 
+pour porter un coup plus puissant. 
