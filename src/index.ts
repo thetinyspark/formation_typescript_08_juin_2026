@@ -1,6 +1,23 @@
+import { Inject } from "./decorators/Inject";
 import { Injectable } from "./decorators/Injectable";
 import LogMethodCall from "./decorators/LogMethodCall";
+import { LogParam } from "./decorators/LogParam";
+import { Readonly } from "./decorators/ReadOnly";
 import rootContainer from "./ioc/ContainerIoC";
+
+
+@Injectable(
+    {
+        key: "NAME_KEY", 
+        isSingleton: false
+    }
+)
+class MyName{
+    public sayMyName():void{
+        console.log("I am Heisenberg");
+    }
+}
+
 
 @Injectable(
     {
@@ -9,19 +26,10 @@ import rootContainer from "./ioc/ContainerIoC";
     }
 )
 class Test{
-
-    @LogMethodCall
-    public doTest( param:string){
-        console.log("le message est: ", param);
-    }
-
+    public name:MyName = Inject<MyName>("NAME_KEY") as MyName;
 }
 
 const test1 = rootContainer.resolve<Test, any>("TEST_KEY");
-const test2 = rootContainer.resolve<Test, any>("TEST_KEY");
-
-test1?.doTest("hello world");
-test1?.doTest("tagazou");
-
+test1?.name.sayMyName();
 // console.log(test1 === test2);
 
