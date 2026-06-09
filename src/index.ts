@@ -1,4 +1,5 @@
 import { Injectable } from "./decorators/Injectable";
+import LogMethodCall from "./decorators/LogMethodCall";
 import rootContainer from "./ioc/ContainerIoC";
 
 @Injectable(
@@ -7,10 +8,20 @@ import rootContainer from "./ioc/ContainerIoC";
         isSingleton: true
     }
 )
-class Test{}
+class Test{
+
+    @LogMethodCall
+    public doTest( param:string){
+        console.log("le message est: ", param);
+    }
+
+}
 
 const test1 = rootContainer.resolve<Test, any>("TEST_KEY");
 const test2 = rootContainer.resolve<Test, any>("TEST_KEY");
 
-console.log(test1 === test2);
+test1?.doTest("hello world");
+test1?.doTest("tagazou");
+
+// console.log(test1 === test2);
 

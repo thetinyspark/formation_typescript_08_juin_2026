@@ -1,15 +1,12 @@
-TP n°12
+TP n°13
 
-De la même façon que l'on a crée un SayanInitProperties, créez un ArenaInitProperties
-avec les éléments suivants: 
+- Créez une méthode nommée 'by2' sur la classe Test qui renvoie
+le nombre passée en paramètre x 2
 
-{
-    heroes: IHeroe[] // tableau de héros fournis à l'arène dès son initialisation
-}
+- Créer un décorateur nommé Cache qui permet de vérifier
+si la méthode a déjà été appellée avec ce paramètre, 
+si oui, alors Cache retourne le résultat ayant déjà été calculé
+pour ce paramètre. Bien sur, il faut que Cache stocke les résultats.
 
-Ce paramètre de type ArenaInitProperties, doit être utilisé dans la builder function 
-et pris en charge par AccorArena et Colosseum. 
-
-Vous pouvez ajouter une méthode getHeroes aux deux arènes afin de tester
-si oui ou non, après leur création, elles ont récupérés les héros contenus
-dans leur paramètre. 
+Indice, Une fonction et un Map peuvent faire l'affaire
+C'est ce que l'on appelle de ma memoïzation de fonction
