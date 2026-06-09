@@ -3,12 +3,17 @@
 // que l'on crée un nouvel objet à partir des plans
 
 import Heroe from "./Heroe";
+import IMage from "./IMage";
 
 
-export default class Mage extends Heroe{
+export default class Mage extends Heroe implements IMage{
     
     private _stamina:number = 100;
     private _mana:number = 100;
+
+    public reloadMana(): void {
+        this._mana = 100;
+    }
 
 
     // on peut réécrire (override) une méthode parente

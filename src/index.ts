@@ -2,7 +2,31 @@ import Heroe from "./Heroe";
 import Mage from "./Mage";
 import Sayan from "./Sayan";
 
-const harry = new Mage("Harry", 100, 300); 
+
+type Profile = {
+    name:string ,
+    id:number,
+    hobbies: Map<string,string>
+}; 
+
+const map = new Map<string,string>();
+map.set("echecs","aveugle"); 
+
+const monProfile = {name:"toto", id: 1, hobbies: map}; 
+
+const json = JSON.stringify(
+    Array.from(map.keys()).reduce( 
+        (obj:any, currentKey:string)=>{
+            obj[currentKey] = map.get(currentKey);
+            return obj;
+        }, 
+        {}
+    )
+);
+
+console.log(json);
+
+// const harry = new Mage("Harry", 100, 300); 
 
 // const hermione = new Mage("Hermione", 95, 300); 
 

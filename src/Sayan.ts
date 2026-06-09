@@ -3,9 +3,10 @@
 // que l'on crée un nouvel objet à partir des plans
 
 import Heroe from "./Heroe";
+import ISayan from "./ISayan";
 
 
-export default class Sayan extends Heroe{
+export default class Sayan extends Heroe implements ISayan{
     
     private _transformed:boolean = false;
 
