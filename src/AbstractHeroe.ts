@@ -3,10 +3,9 @@
 // que l'on crée un nouvel objet à partir des plans
 
 import IHeroe from "./IHeroe";
-import PureAbstractHeroe from "./PureAbstractHeroe";
 
 
-export default abstract class AbstractHeroe extends PureAbstractHeroe implements IHeroe{
+export default abstract class AbstractHeroe implements IHeroe{
 
     // les variables appartenant aux objets 
     // sont des propriétés
@@ -19,7 +18,6 @@ export default abstract class AbstractHeroe extends PureAbstractHeroe implements
         param_strength:number, 
         param_hp:number = 100
     ){
-        super();
         this.name = param_name; 
         this.strength = param_strength;
         this.hp = param_hp; 
