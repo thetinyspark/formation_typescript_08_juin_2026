@@ -2,11 +2,11 @@
 // pour des objets. Ces plans sont utilisés à chaque 
 // que l'on crée un nouvel objet à partir des plans
 
-import Heroe from "./Heroe";
+import AbstractHeroe from "./AbstractHeroe";
 import ISayan from "./ISayan";
 
 
-export default class Sayan extends Heroe implements ISayan{
+export default class Sayan extends AbstractHeroe implements ISayan{
     
     private _transformed:boolean = false;
 

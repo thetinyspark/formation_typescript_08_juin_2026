@@ -2,11 +2,11 @@
 // pour des objets. Ces plans sont utilisés à chaque 
 // que l'on crée un nouvel objet à partir des plans
 
-import Heroe from "./Heroe";
+import AbstractHeroe from "./AbstractHeroe";
 import IMage from "./IMage";
 
 
-export default class Mage extends Heroe implements IMage{
+export default class Mage extends AbstractHeroe implements IMage{
     
     private _stamina:number = 100;
     private _mana:number = 100;

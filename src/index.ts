@@ -1,34 +1,10 @@
-import Heroe from "./Heroe";
+import Heroe from "./AbstractHeroe";
 import Mage from "./Mage";
 import Sayan from "./Sayan";
 
 
-type Profile = {
-    name:string ,
-    id:number,
-    hobbies: Map<string,string>
-}; 
-
-const map = new Map<string,string>();
-map.set("echecs","aveugle"); 
-
-const monProfile = {name:"toto", id: 1, hobbies: map}; 
-
-const json = JSON.stringify(
-    Array.from(map.keys()).reduce( 
-        (obj:any, currentKey:string)=>{
-            obj[currentKey] = map.get(currentKey);
-            return obj;
-        }, 
-        {}
-    )
-);
-
-console.log(json);
-
-// const harry = new Mage("Harry", 100, 300); 
-
-// const hermione = new Mage("Hermione", 95, 300); 
+const harry = new Mage("Harry", 100, 300); 
+const hermione = new Mage("Hermione", 95, 300); 
 
 // while( harry.alive && hermione.alive ){
 //     // on va tirer un nombre au hasard entre 0 et 1

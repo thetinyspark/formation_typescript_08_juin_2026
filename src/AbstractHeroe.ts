@@ -3,9 +3,10 @@
 // que l'on crée un nouvel objet à partir des plans
 
 import IHeroe from "./IHeroe";
+import PureAbstractHeroe from "./PureAbstractHeroe";
 
 
-export default class Heroe implements IHeroe{
+export default abstract class AbstractHeroe extends PureAbstractHeroe implements IHeroe{
 
     // les variables appartenant aux objets 
     // sont des propriétés
@@ -18,6 +19,7 @@ export default class Heroe implements IHeroe{
         param_strength:number, 
         param_hp:number = 100
     ){
+        super();
         this.name = param_name; 
         this.strength = param_strength;
         this.hp = param_hp; 
@@ -71,7 +73,16 @@ export default class Heroe implements IHeroe{
         return this.hp > 0;
     }
 
-    protected getAtkAmount():number{
-        return this.strength;
-    }
+    // une méthode abstraite: 
+
+    // les méthodes abstraites fonctionnent de la même façon 
+    // que les méthodes décritent dans les contrats d'interfaces
+    // elles obligent les classes filles (qui héritent de la classe abstraite)
+    // à implémenter leur propre version de la méthode en question. 
+    // Notez que seules les classes abstraites peuvent proposer des 
+    // méthodes abstraites. 
+    protected abstract getAtkAmount():number;
+    // protected getAtkAmount():number{
+    //     return this.strength;
+    // }
 }
