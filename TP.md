@@ -1,4 +1,12 @@
-TP n°10
+TP n°11
 
-Créez une classe, n'importe laquelle, avec laquelle vous implémentez
-le pattern singleton tel que vu dans Arena.
+Enregistrer sur la dynamic factory, des méthodes, vous permettant 
+de retourner des weapons de différents types en fonction 
+d'une clé. 
+
+Exemple: 
+
+    la clé SWORD déclenchera un builder qui retournera une sword
+    la clé STAFF déclenchera un builder qui retournera un Magic Staff
+
+    etc etc .. 

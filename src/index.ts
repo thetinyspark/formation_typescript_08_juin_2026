@@ -1,14 +1,18 @@
-import Arena from "./arena/Arena";
-import Mage from "./Mage";
+import AccorArena from "./arena/AccorArena";
+import Colosseum from "./arena/Colosseum";
+import { IArena } from "./arena/IArena";
+import DynamicFactory from "./factory/DynamicFactory";
+
+const factory = new DynamicFactory();
+const production = true;
+const ARENA_BUILDER_KEY:string = "ARENA";
+
+if( production){
+    factory.addBuilder(ARENA_BUILDER_KEY, ()=>new AccorArena()); 
+}
+else{   
+    factory.addBuilder(ARENA_BUILDER_KEY, ()=>new Colosseum()); 
+}
 
 
-// avec l'emploi de la fonction statique getInstance
-// décrite sur la classe Arena, je suis certain de toujours
-// obtenir le même objet de type Arena / la même instance de Arena
-
-// le pattern singleton permet de gérer efficacement le stockage 
-// et l'accès à une seule et unique instance d'une même classe
-
-// TOUTEFOIS: C'est un anti pattern
-// ça brise le principe SOLID
-Arena.getInstance().addHeroe( new Mage("merlin", 20, 100));
+factory.resolve<IArena>(ARENA_BUILDER_KEY)?.startFight();
