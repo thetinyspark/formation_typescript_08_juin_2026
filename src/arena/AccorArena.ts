@@ -5,6 +5,12 @@ export default class AccorArena implements IArena{
 
     private _heroes:IHeroe[] = []; 
 
+    public constructor( heroes:IHeroe[]){
+        this._heroes = heroes;
+    }
+    public getHeroes(): IHeroe[] {
+        return this._heroes;
+    }
     // gérer les héros ainsi que leur combat est une responsabilité
     public addHeroe(heroe:IHeroe):void{
 

@@ -15,6 +15,8 @@ type SayanInitProperties = {
     hp:number
 };
 
+type ArenaInitProperties = {heroes:IHeroe[]};
+
 factory.addBuilder(
     HEROE_KEY, 
     (properties:SayanInitProperties)=>{
@@ -23,15 +25,19 @@ factory.addBuilder(
             properties.strength, 
             properties.hp
         );
-    }
-    , 
+    }, 
     false
 ); 
-factory.addBuilder(ARENA_KEY, (params:any[])=>new Colosseum(), false); 
+factory.addBuilder(ARENA_KEY, (params:ArenaInitProperties)=>new Colosseum(params.heroes), false); 
 
 const init1:SayanInitProperties = {name:"Goku", strength:100, hp:100};
 const init2:SayanInitProperties = {name:"Vegeta", strength:95, hp:105};
+const init3:ArenaInitProperties = {
+    heroes: [
+        factory.resolve<IHeroe, SayanInitProperties>(HEROE_KEY, init1) as IHeroe,
+        factory.resolve<IHeroe, SayanInitProperties>(HEROE_KEY, init2) as IHeroe,
+    ]
+};
 
-const goku = factory.resolve<IHeroe, SayanInitProperties>(HEROE_KEY, init1);
-const vege = factory.resolve<IHeroe, SayanInitProperties>(HEROE_KEY, init2);
-const aren = factory.resolve<IArena, any[]>(ARENA_KEY,  [666,2,12]);
+const aren = factory.resolve<IArena, ArenaInitProperties>(ARENA_KEY,  init3);
+console.log(aren?.getHeroes());
