@@ -1,5 +1,6 @@
 import Heroe from "./AbstractHeroe";
 import Mage from "./Mage";
+import PureAbstractHeroe from "./PureAbstractHeroe";
 import Sayan from "./Sayan";
 
 
