@@ -1,10 +1,4 @@
-TP n°9
+TP n°10
 
-Ajouter la fonctionnalité suivante à la classe HeroeWithWeapon. 
-
-- Il vous faut la capacité de perdre une arme
-- Il vous faut la capacité d'équiper une arme 
-- Il vous faut la capacité de stocker une arme (donc le héros doit avoir un inventaire)
-
-- Lorsque le héros porte une arme, la force de l'arme s'ajoute à celle du héros 
-pour porter un coup plus puissant. 
+Créez une classe, n'importe laquelle, avec laquelle vous implémentez
+le pattern singleton tel que vu dans Arena.
